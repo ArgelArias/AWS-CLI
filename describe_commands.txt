@@ -1,0 +1,38 @@
+#configure the access to AWS, it will request your access key credentials
+$ aws configure
+
+#list the VPCs
+$ aws ec2 describe-vpcs
+
+#list the EC2 instances
+$ aws ec2 describe-instances
+
+#--output option for change the output
+--output json
+--output yaml
+--output text
+--output table
+--output table --color off #for Windows
+
+#list the subnets
+$ aws ec2 describe-subnets
+#list by the IDs
+$ aws ec2 describe-subnets --subnet-ids <value> #the value can be a list
+
+#--filters option for aditional filter like the below, please refer the documentation for more, can be added multiple filters
+#<values> can be a list of values
+--filters "Name=availabitlity-zone, Values=<values>"
+--filters "Name=<availabitlity-zone-id>, Values=<values>"
+--filters "Name=<available-ip-address-count>, Values=<values>"
+--filters "Name=<cidr-block>, Values=<values>"
+--filters "Name=<vpc-id>, Values=<values>"
+
+#--query option for the query inside the result
+--query 'Subnets[1]' #get the 2nd element
+--query 'Subnets[1:3]' # get from the 2nd to the 3rd element
+--query 'Subnets[*].AvailabilityZone' # the AZs from all the elements
+--query 'Vpcs[].VpcId'
+--query 'Subnets[].[SubnetId,AvailabilityZone]' #query for multiple fields
+--query 'Vpcs[].[VpcId,State]'
+--query 'Vpcs[].{Estado:State}' #put labels on the output
+--query 'Vpcs[].[{"VPC ID":VpcId},{Estado:State},{Defecto:IsDefault}]' #put labels on the output for multiple fields

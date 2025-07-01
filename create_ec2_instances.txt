@@ -1,0 +1,13 @@
+$ aws ec2 run-instances --image-id <ami-ID> --count <number-of-instances> --instance-type <instance-type> --key-name <key-pair-name> --security-groups <security-groups>
+
+#example
+$ aws ec2 run-instances --image-id ami-00f7e5c52c0f43726 --count 3 --instance-type t3.micro --key-name ClavesOregon --security-groups ServidoresWeb
+
+#stop instances
+$ aws ec2 stop-instances --instance-ids <values>
+
+#start instances
+$ aws ec2 start-instances --instance-ids <values>
+
+#terminate instances, drop the instances
+$ aws ec2 terminate-instances --instance-ids <values>
