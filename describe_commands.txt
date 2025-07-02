@@ -36,3 +36,6 @@ $ aws ec2 describe-subnets --subnet-ids <value> #the value can be a list
 --query 'Vpcs[].[VpcId,State]'
 --query 'Vpcs[].{Estado:State}' #put labels on the output
 --query 'Vpcs[].[{"VPC ID":VpcId},{Estado:State},{Defecto:IsDefault}]' #put labels on the output for multiple fields
+
+#list the images created by me
+$ aws ec2 describe-images --owner self

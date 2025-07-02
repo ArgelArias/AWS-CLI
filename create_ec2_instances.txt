@@ -11,3 +11,16 @@ $ aws ec2 start-instances --instance-ids <values>
 
 #terminate instances, drop the instances
 $ aws ec2 terminate-instances --instance-ids <values>
+
+
+#create an AMI from an existing instance
+$ aws ec2 create-image --instance-id <instance-id> --name <new-AMI-name>
+
+#create a volume
+$ aws ec2 create-volume --availability-zone <AZ> --size <size in GB> --volume-type <gp2 for example>
+
+#attach a volume to an instance
+$ aws ec2 attach-volume --volume-id <VolID> --instance-is <InsID> --device </dev/sdh for example>
+
+#detach a volume
+$ aws ec2 detach-volume --volume-id <VolID>
