@@ -1,0 +1,17 @@
+#list the load balancers
+$ aws elbv2 describe-load-balancers
+
+#list the target groups
+$ aws elbv2 describe-target-groups
+
+#check the health of the target group
+$ aws elbv2 describe-target-health --target-group-arn <target-group-arn>
+
+#list the listeners of the load balancer
+# aws elbv2 describe-listeners --load-balancer-arn <load-balancer-arn>
+
+#list the rules of the listener
+# aws elbv2 describe-rules --listener-arn <listener-arn>
+
+#delete a rule
+$ aws elbv2 delete-rule --rule-arn <rule-arn>
