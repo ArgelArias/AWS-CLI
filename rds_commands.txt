@@ -1,0 +1,25 @@
+#create an RDS
+$ aws rds create-db-instance --db-instance-identifier <rds-name> \
+      --db-instance-class <db.t3.micro> 
+      --engine mysql
+      --master-username <username>
+      --master-user-password <password>
+      --allocated-storage 20 #in GBs
+
+#list the RDS's
+$ aws rds describe-db-instances
+$ aws rds describe-db-instances --query DBInstances[].DBInstanceIdentifier
+
+#delete an RDS
+$ aws rds delete-db-instance --db-instance-identifier <rds-name>
+
+#create a snapshot from a DB
+$ aws rds create-db-snapshot --db-instance-identifier <rds-name> \
+      --db.snapshot-identifier <name-of-the-snapshot>
+
+#list the snapshots
+$ aws rds describe-db-snapshots
+$ aws rds describe-db-snapshots --query "DBSnapshots[*].{Name:DBSnapshotIdentifier}"
+
+#delete a snapshot
+$ aws rds delete-db-snapshot --db-snapshot-identifier <snapshot-name>

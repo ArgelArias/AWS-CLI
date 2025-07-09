@@ -1,0 +1,20 @@
+#list the topics
+$ aws sns list-topics
+
+#list the subscriptions
+$ aws sns list-subscriptions
+
+#create a topic
+# aws sns create-topic --name <topic-name>
+
+#subscribe to a topic
+$ aws sns subscribe \
+      --topic-arn <topic-arn> \
+      --protocol email \
+      --notification-endpoint <email@email.com>
+
+#unsubscrite from a topic
+$ aws sns unsubscribe --subscription-arn <subscription-arn>
+
+#delete a topic
+#aws sns delete-topic <topic-arn>
