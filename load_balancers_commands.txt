@@ -15,3 +15,9 @@ $ aws elbv2 describe-target-health --target-group-arn <target-group-arn>
 
 #delete a rule
 $ aws elbv2 delete-rule --rule-arn <rule-arn>
+
+#delete a load balancer
+$ aws elbv2 delete-load-balancer --load-balancer-arn <load-balancer-arn>
+
+#delete a target group
+$ aws elbv2 delete-target-group --target-group-arn <target-group-arn>
