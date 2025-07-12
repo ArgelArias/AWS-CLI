@@ -1,0 +1,35 @@
+#list the buckets
+$ aws s3 ls
+
+#make a bucket
+$ aws s3 mb s3://<bucket-name>
+
+#copy/update a file to a bucket
+$ aws s3 cp <local-file> s3://<bucket-name>
+
+#remove an object
+$ aws s3 rm s3://<bucket-name>/<object-name>
+
+#remove objects recursively
+$ aws s3 rm s3://<bucket-name>/*log --recursive
+
+#delete a bucket
+$ aws s3 rb s3://<bucket-name>
+
+-------------------s3api----------------------
+#output as configured for AWS-cLI, JSON as default
+
+#list the buckets
+$ aws s3api list-buckets
+
+#create a bucket
+$ aws s3api create-bucket \
+      --bucket <bucket-name> \
+      --region <region-id> \
+      --create-bucket-configuration LocationConstraint=<region-id>
+
+#upload to the bucket
+$ aws s3api  put-object --bucket <bucket-name> --key <final-name> --body <local-file>
+
+#list the objects
+$ aws s3api list-objects --bucket <bucket-name>
