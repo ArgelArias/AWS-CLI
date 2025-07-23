@@ -1,0 +1,20 @@
+#list the groups
+$ aws iam list-groups
+
+#list the policies
+$ aws iam list-policies
+
+#list only my policies
+$ aws iam list-policies --scope Local
+
+#list the users
+$ aws iam list-users
+
+#create a policy
+$ aws iam create-policy --policy-name <policy-name> --policy-document <file.json>
+
+#attach a policy to a user
+$ aws iam attach-user-policy --user-name <user-name> --policy-arn <policy-arn>
+
+#list the policies attached to a user
+$ aws iam list-attached-user-policies --user-name <user-name>
