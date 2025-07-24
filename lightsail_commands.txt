@@ -1,0 +1,7 @@
+#first you need to install AWS-CLI and Lightsail separately
+
+#push your local image
+$ aws lightsail push-container-image --region <region-id> \
+      --service-name <service-name> \
+      --label <label> \
+      --image <your local docker image>
