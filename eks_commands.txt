@@ -1,0 +1,8 @@
+#list the EKS clusters
+$ aws eks list-clusters
+
+#list the node groups of the cluster
+$ aws eks list-nodegroups --cluster-name <cluster-name>
+
+#describe a node group
+$ aws eks describe-nodegroup --cluster-name <cluster-name> --nodegroup <nodegroup-name>
