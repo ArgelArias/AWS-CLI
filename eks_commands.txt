@@ -6,3 +6,6 @@ $ aws eks list-nodegroups --cluster-name <cluster-name>
 
 #describe a node group
 $ aws eks describe-nodegroup --cluster-name <cluster-name> --nodegroup <nodegroup-name>
+
+#add a cluster to the kubeconfig file
+$ aws eks update-kubeconfig --name <cluster-name>
