@@ -1,0 +1,21 @@
+#describe registry
+$ aws ecr describe-registry
+
+#describe the repositories
+$ aws ecr describe-repositories
+
+#create a repository
+$ aws ecr create-repository --repository-name <repository-name>
+
+#list the images of the repository
+# aws ecr list-images --repository-name <repository-name>
+
+#Public repositories, only visible from region us-east-1
+#describe registries
+$ aws ecr-public describe-registries --region us-east-1
+
+#describe repositories
+$ aws ecr-public describe-repositories --region us-east-1
+
+#list the images of the repository
+# aws ecr-public list-images --repository-name <repository-name> --region us-east-1

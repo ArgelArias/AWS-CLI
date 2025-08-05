@@ -1,3 +1,6 @@
+#whoami
+$ aws sts get-caller-identity
+
 #list the groups
 $ aws iam list-groups
 
